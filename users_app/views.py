@@ -9,6 +9,14 @@ def users(request):
         context = {"users": User.objects.all()}
         return render(request, "users.html", context )
 
+def show_book(request, id):
+        context = {"book": Book.objects.get(id=id)}
+        return render(request,"book.html", context)
+
+def show_user(request, id):
+        context = {"user": User.objects.get(id=id)}
+        return render(request,"showUser.html", context)
+
 def create_user(request):
        
         first_name = request.POST['first_name']
